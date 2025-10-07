@@ -43,7 +43,7 @@ python allelic_distribution.py -h
 ## Citation
 If you use any of these scripts, please do not forget to cite:   
 
-Zohra Lodhia, Verónica Mixão, Joana Isidro, Rita Ferreira, Dora Cordeiro, Cristina Correia, Inês João, João Paulo Gomes, Maria José Borrego and Vítor Borges (2025) Exploring _Chlamydia trachomatis_ global genomic diversity with a novel core-genome MLST (cgMLST) approach. bioRxiv.
+[Zohra Lodhia, Verónica Mixão, Joana Isidro, Rita Ferreira, Dora Cordeiro, Cristina Correia, Inês João, João Paulo Gomes, Maria José Borrego and Vítor Borges (2025) Advancing _Chlamydia trachomatis_ genomic surveillance and research with a novel core-genome MLST (cgMLST) approach. Research Square. doi: 10.21203/rs.3.rs-7743240/v1](https://www.researchsquare.com/article/rs-7743240/v1)
 
 ## Funding
 This work was funded by national funds through FCT - Foundation for Science and Technology, I.P., in the frame of Individual CEEC 2022.00851.CEECIND/CP1748/CT0001 (doi: 10.54499/2022.00851.CEECIND/CP1748/CT0001) and of the doctoral fellowship SFRH/BD/147446/2019 (doi: 10.54499/SFRH/BD/147446/2019), and by the European Union project “Sustainable use and integration of enhanced infrastructure into routine genome-based surveillance and outbreak investigation activities in Portugal” - GENEO [101113460] on behalf of the EU4H programme [EU4H-2022-DGA-MS-IBA-01-02].
