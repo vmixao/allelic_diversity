@@ -2,7 +2,7 @@
 
 This repository contains the set of scripts used to **explore the allelic diversity in a large collection of isolates** based on a cg/wgMLST matrix and a metadata table.
 
-##Scripts
+## Scripts
 
 ### _allelic_heatmap.py_
 The script _allelic_heatmap.py_ contains the set of functions necessary to build a heatmap with the allele distribution across a species tree. This script generates an **interactive heatmap** that can be easily explored by the user to detect potential recombination events between different groups of samples.
@@ -69,7 +69,17 @@ The script _allelic_distribution.py_ contains the set of functions necessary to 
 ```
 
 ## Command line examples
+If you need example files to run these scripts, we suggest that you **download and unzip the folders available at this Zenodo repository**: [https://doi.org/10.5281/zenodo.17177579](https://doi.org/10.5281/zenodo.17177579). The following command line examples consider these files as input:
 
+1. Obtain the allelic heatmap ordered according to a species tree and colored according to the lineage in which they are dominant (determined based on the allele frequency in each lineage).  
+```
+python allelic_heatmap.py -a 02_input_to_setup_cgMLST_1230_background/Ct_alleles_missing_code_0.tsv -m 02_input_to_setup_cgMLST_1230_background/Ct_metadata.tsv -t 03_example_ReporTree_output_1230_genomes/HC/Ct_HC_single_HC.nwk -hcol lineage -o TEST_allelic_heatmap -mode frequency
+```
+
+2. Obtain a table with the allelic distribution per lineage.  
+```
+python allelic_distribution.py -a 02_input_to_setup_cgMLST_1230_background/Ct_alleles_missing_code_0.tsv -m 02_input_to_setup_cgMLST_1230_background/Ct_metadata.tsv -c lineage -o TEST_allelic_distribution
+```
 
 ## Installation
 
