@@ -73,7 +73,7 @@ If you need example files to run these scripts, we suggest that you **download a
 
 1. Obtain the allelic heatmap ordered according to a species tree and colored according to the lineage in which they are dominant (determined based on the allele frequency in each lineage).  
 ```
-python allelic_heatmap.py -a 02_input_to_setup_cgMLST_1230_background/Ct_alleles_missing_code_0.tsv -m 02_input_to_setup_cgMLST_1230_background/Ct_metadata.tsv -t 03_example_ReporTree_output_1230_genomes/HC/Ct_HC_single_HC.nwk -hcol lineage -o TEST_allelic_heatmap -mode frequency
+python allelic_heatmap.py -a 02_input_to_setup_cgMLST_1230_background/Ct_alleles_missing_code_0.tsv -m 02_input_to_setup_cgMLST_1230_background/Ct_metadata.tsv -t 03_example_ReporTree_output_1230_genomes/HC/Ct_HC_single_HC.nwk -hcol lineage -o TEST_allelic_heatmap -mode frequency -ncat_dominant 3
 ```
 
 2. Obtain a table with the allelic distribution per lineage.  
