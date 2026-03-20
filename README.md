@@ -2,13 +2,15 @@
 
 This repository contains the set of scripts used to **explore the allelic diversity in a large collection of isolates** based on a cg/wgMLST matrix and a metadata table.
 
-## Input/Output of _allelic_heatmap.py_
+##Scripts
+
+### _allelic_heatmap.py_
 The script _allelic_heatmap.py_ contains the set of functions necessary to build a heatmap with the allele distribution across a species tree. This script generates an **interactive heatmap** that can be easily explored by the user to detect potential recombination events between different groups of samples.
 
 #### Input
-- allelic matrix (cg/wgMLST)
-- metadata table
-- dendrogram
+- cg/wgMLST allelic matrix (*tsv)
+- metadata table (*tsv)
+- dendrogram (*nwk)
 
 #### Output
 - HTML with the tree and the heatmap
@@ -17,16 +19,57 @@ The script _allelic_heatmap.py_ contains the set of functions necessary to build
 - *_allele_summary_counts.tsv* - a summary table with the counts of loci and alleles that are exclusive of each group or shared by some groups.
 - *_allele_dominance.tsv* - a table indicating the absolute and relative counts of each allele in each group of samples. 
 
-## Input/Output of _allelic_distribution.py_
+#### Usage
+```
+  -h, --help            show this help message and exit
+  -a ALLELIC_MATRIX, --allelic_matrix ALLELIC_MATRIX
+                        TSV allelic matrix
+  -m METADATA, --metadata METADATA
+                        Metadata TSV
+  -c COLORS, --colors COLORS
+                        (Optional) Colors TSV (column, category, color). If omitted, colors are auto-assigned and saved to <prefix>_colors.tsv
+  -hcol HEADER, --header HEADER
+                        Metadata column to use for categories
+  -t TREE, --tree TREE  Newick tree file
+  -o OUTPUT_PREFIX, --output_prefix OUTPUT_PREFIX
+                        Output prefix
+  -mode {frequency,count}, --mode {frequency,count}
+                        Dominant category mode: 'frequency' (default) or 'count'
+  -ncat NCAT, --ncat NCAT
+                        Optional: if an allele is present in at least N categories, color it gray (nearly conserved)
+  -ncat_dominant NCAT_DOMINANT, --ncat_dominant NCAT_DOMINANT
+                        Optional: if an allele is dominant in at least N categories, color it gray (nearly conserved)
+```
+
+### _allelic_distribution.py_
 The script _allelic_distribution.py_ contains the set of functions necessary to obtain information about the proportion of isolates from a given group (e.g. lineage) that harbor a certain allele.
 
 #### Input
-- allelic matrix (cg/wgMLST)
-- metadata table
+- cg/wgMLST allelic matrix (*tsv)
+- metadata table (*tsv)
 
 #### Output
 - *_summary.tsv* - a table where each row corresponds to an allele and each column to a group of samples (according to a user-selected metadata variable, e.g. lineage), indicating what is the proportion of isolates of the group that contains the allele.
 - *_distribution.tsv* - a table where each row corresponds to a locus and each column to a group, indicating the allele distribution per group.
+
+#### Usage
+```
+  -h, --help            show this help message and exit
+  -m METADATA, --metadata METADATA
+                        [MANDATORY] Metadata file in .tsv format.
+  -a ALLELES, --allele ALLELES
+                        [MANDATORY] Allele matrix in .tsv format.
+  -c GROUP_COLUMN, --group-column GROUP_COLUMN
+                        [MANDATORY] Name of the metadata column with the groups of interest.
+  -g GROUP_INTEREST, --group-interest GROUP_INTEREST
+                        [OPTIONAL] Comma-separated list of groups of interest to select the alleles under analysis. If nothing is indicated, all goups
+                        will be considered as of interest and all alleles will be analysed.
+  -o OUTPUT, --output OUTPUT
+                        [OPTIONAL] Tag for output files. default: Allele_distribution
+```
+
+## Command line examples
+
 
 ## Installation
 
